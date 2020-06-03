@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHY-MQ-dLg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -57,13 +57,23 @@
                                     <action selector="safariServicesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfb-JL-7Rk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-iX-n0i">
+                                <rect key="frame" x="109" y="415" width="196" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Push SFSafariViewController"/>
+                                <connections>
+                                    <action selector="pushSafariServicesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vUK-jO-bqx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2qI-BT-2Bp"/>
                     <connections>
                         <outlet property="imageView" destination="eNy-eK-h6V" id="MPk-O1-oq5"/>
                         <outlet property="pinnedVCBtn" destination="3Ic-os-gv5" id="9jK-8Z-VHq"/>
+                        <outlet property="pushSafariServicesBtn" destination="CqN-iX-n0i" id="hFR-l7-hq9"/>
                         <outlet property="safariBtn" destination="GgU-od-8YL" id="Dcc-rN-3WR"/>
                         <outlet property="safariServicesBtn" destination="OpC-yM-ehY" id="smp-qk-sns"/>
                         <outlet property="textField" destination="JL1-F8-2Zw" id="LX5-Pu-Zij"/>
@@ -71,6 +81,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IUv-Kg-Dlz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OHY-MQ-dLg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tZ-C5-dNC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ACs-aK-Zcy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMJ-yi-RMM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>

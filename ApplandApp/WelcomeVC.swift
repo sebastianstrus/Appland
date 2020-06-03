@@ -19,38 +19,47 @@ class WelcomeVC: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var safariBtn: UIButton!
     @IBOutlet weak var pinnedVCBtn: UIButton!
     @IBOutlet weak var safariServicesBtn: UIButton!
+    @IBOutlet weak var pushSafariServicesBtn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         setupViews()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
 
     
     
     @IBAction func webViewAction(_ sender: Any) {
-        guard let text = textField.text, text != "" else {return}
-        print("Open WebView here: \(text)")
+        guard let urlString = textField.text, urlString != "" else {return}
         
         let webVC = WebVC()
-        webVC.myUrl = text
+        webVC.myUrl = urlString
         webVC.modalPresentationStyle = .fullScreen
         self.present(webVC, animated: false, completion: nil)
     }
     
     @IBAction func safariAction(_ sender: Any) {
-        guard let text = textField.text, text != "" else { return }
-        if let url = URL(string: text) {
+        guard let urlString = textField.text, urlString != "" else { return }
+        if let url = URL(string: urlString) {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func pinnedVCAction(_ sender: Any) {
-        guard let text = textField.text, text != "" else {return}
-        print("Open WebView here: \(text)")
+        guard let urlString = textField.text, urlString != "" else {return}
         
         let webVC = PinnedWebVC()
-        webVC.myUrl = text
+        webVC.myUrl = urlString
         
         
         webVC.modalPresentationStyle = .fullScreen
@@ -58,7 +67,7 @@ class WelcomeVC: UIViewController, SFSafariViewControllerDelegate {
     }
     
     @IBAction func safariServicesAction(_ sender: Any) {
-        guard let text = textField.text, text != "" else {return}
+        guard let urlString = textField.text, urlString != "" else {return}
         //        if let url = URL(string: text) {
         //            UIApplication.shared.open(url)
         //            //UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
@@ -71,7 +80,6 @@ class WelcomeVC: UIViewController, SFSafariViewControllerDelegate {
         //            }
         //        }
                 
-                let urlString = text
 
                 if let url = URL(string: urlString) {
                     let vc = SafariServicesVC(url: url)
@@ -79,9 +87,26 @@ class WelcomeVC: UIViewController, SFSafariViewControllerDelegate {
                     vc.delegate = self
                     
                     present(vc, animated: true)
-        }}
+        }
+        
+    }
     
     
+    
+    @IBAction func pushSafariServicesAction(_ sender: Any) {
+        guard let urlString = textField.text, urlString != "" else {return}
+
+        //test
+        if let url = URL(string: urlString) {
+            let vc = SafariServicesVC(url: url)
+            
+            vc.delegate = self
+            
+            navigationController?.pushViewController(vc, animated: true)
+            //push(vc, animated: true)
+        }
+    
+    }
     
     
     func setupViews() {
@@ -116,6 +141,12 @@ class WelcomeVC: UIViewController, SFSafariViewControllerDelegate {
         safariServicesBtn.titleLabel?.font = safariServicesBtn.titleLabel?.font.withSize(20)
         safariServicesBtn.setAnchor(top: pinnedVCBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
         safariServicesBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        pushSafariServicesBtn.translatesAutoresizingMaskIntoConstraints = false
+        pushSafariServicesBtn.titleLabel?.font = pushSafariServicesBtn.titleLabel?.font.withSize(20)
+        pushSafariServicesBtn.setAnchor(top: safariServicesBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
+        pushSafariServicesBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     
     }
 }
