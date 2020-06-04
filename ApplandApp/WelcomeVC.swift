@@ -121,31 +121,31 @@ class WelcomeVC: UIViewController, SFSafariViewControllerDelegate {
         
         webViewBtn.translatesAutoresizingMaskIntoConstraints = false
         webViewBtn.titleLabel?.font = webViewBtn.titleLabel?.font.withSize(20)
-        webViewBtn.setAnchor(top: textField.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
+        webViewBtn.setAnchor(top: textField.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300, height: 40)
         webViewBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
         safariBtn.translatesAutoresizingMaskIntoConstraints = false
         safariBtn.titleLabel?.font = safariBtn.titleLabel?.font.withSize(20)
-        safariBtn.setAnchor(top: webViewBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
+        safariBtn.setAnchor(top: webViewBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300, height: 40)
         safariBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
         pinnedVCBtn.translatesAutoresizingMaskIntoConstraints = false
         pinnedVCBtn.titleLabel?.font = pinnedVCBtn.titleLabel?.font.withSize(20)
-        pinnedVCBtn.setAnchor(top: safariBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
+        pinnedVCBtn.setAnchor(top: safariBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300, height: 40)
         pinnedVCBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
         safariServicesBtn.translatesAutoresizingMaskIntoConstraints = false
         safariServicesBtn.titleLabel?.font = safariServicesBtn.titleLabel?.font.withSize(20)
-        safariServicesBtn.setAnchor(top: pinnedVCBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
+        safariServicesBtn.setAnchor(top: pinnedVCBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300, height: 40)
         safariServicesBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
         pushSafariServicesBtn.translatesAutoresizingMaskIntoConstraints = false
         pushSafariServicesBtn.titleLabel?.font = pushSafariServicesBtn.titleLabel?.font.withSize(20)
-        pushSafariServicesBtn.setAnchor(top: safariServicesBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 280, height: 40)
+        pushSafariServicesBtn.setAnchor(top: safariServicesBtn.bottomAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 300, height: 40)
         pushSafariServicesBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     
     }
